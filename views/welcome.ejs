@@ -1,0 +1,41 @@
+<%- include("partials/header"); -%>
+
+    <div class="logout">
+        <a href="/logout">
+            <button class="btn btn-warning " type="submit" name="button">Logout</button>
+        </a>
+    </div>
+    <div class="btn-out">
+        <a href="/https://accounts.google.com/logout">
+            <button class="btn btn-warning" type="submit" name="button">Logout From google</button>
+        </a>
+    </div>
+    <h1>Hello Welcome !!!</h1>
+    <h2>Create 
+        Beautiful Blog.</h2>
+    <h3>
+        <h3>Don't keep your secrets, share them anonymously!</h3>
+        <h3>
+            <%= startingContent %>
+        </h3>
+        <a href="/compose">
+            <button class="btn btn-outline-primary" type="submit" name="button">COMPOSE</button>
+        </a>
+
+        <hr>
+
+        <% posts.forEach(function(post){ %>
+
+            <h1>
+                <%=post.title%>
+            </h1>
+            <p>
+                <%=post.content.substring(0, 100) + " ..." %>
+                    <a href="/posts/<%=post._id%>">Read More</a>
+            </p>
+            <hr>
+
+            <% }) %>
+
+
+                <%- include("partials/footer"); -%>
